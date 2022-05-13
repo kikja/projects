@@ -1,0 +1,22 @@
+.container {
+    padding: 5px;
+    display: flex;
+}
+.showText{
+    text-align: center;
+    width: 40px;
+    border: 1px solid #B8405E;
+    opacity: 1;
+}
+
+.showText::-webkit-inner-spin-button, 
+.showText::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+ .VolumeBtn{
+   background-color: #B8405E;
+   color: #fff;
+   border: none;
+   cursor: pointer;
+}

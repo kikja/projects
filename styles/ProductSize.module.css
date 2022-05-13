@@ -1,0 +1,23 @@
+.container {
+    padding: 5px;
+    display: flex;
+    flex: 1;
+}
+.size {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    margin-right: 50px;
+    justify-content: center;
+    border: none;
+
+}
+.sizeText {
+    padding: 3px;
+    font-size: 12px;
+    color: #B8405E;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+}

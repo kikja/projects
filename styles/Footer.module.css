@@ -1,0 +1,91 @@
+.container {
+    padding: 0px 10px 0px 20px;
+    background-color: #000;
+    color: #FFFF;
+    display: flex;
+}
+
+.item {
+    width: 25%;
+    padding: 30px 10px 0px 20px;
+    background-color: #000;
+    color: #FFFF;
+    flex: 1;
+}
+
+.title {
+    font-weight: blod;
+}
+
+.linkHelp {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+}
+.followIcon {
+    color: #FFFF;
+    font-size: 16px;
+    text-align: justify;
+    justify-items: baseline;
+}
+
+.subscribeForm{
+    width: 400px;
+    padding:10px 10px 40px 10px;
+    border-radius:5px;  
+    position:relative;
+    margin:50px auto;
+}
+
+.socialIcon {
+    padding: 20px;
+    justify-content: left;
+    display: flex;
+    flex: 2;
+}
+.icon{
+    color: #000;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 2px;
+    width: 20px;
+}
+
+.iconItem{
+    padding-left: 5px;
+}
+.emailInput {
+    width:200px;
+    background:rgb(248, 248, 248);
+    height:40px;
+    border:1px solid #dcdcdc;
+    box-shadow:none; 
+    padding:0 10px;
+    font-size:20px;
+    color:#933C60;
+    float: left;  
+    margin-left:20px;
+}
+
+.emailInput:placeholder-shown{
+    font-size: 11px;
+    color: #B8405E;
+}
+
+.buttonInput {
+    border:none;
+    height:40px;
+    width:100px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #B8405E;
+    background-color: #fff;
+    border: 2px solid #B8405E;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
