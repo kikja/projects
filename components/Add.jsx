@@ -1,28 +1,19 @@
 import { useState } from "react";
 import styles from "../styles/Add.module.css";
 import axios from "axios";
-import { useRouter } from "next/router";
+
 
 const Add = ({ setClose }) => {
   const [file, setFile] = useState(null);
   const [title, setTitle] = useState(null);
   const [desc, setDesc] = useState(null);
   const [prices, setPrices] = useState([]);
-  const [extraOptions, setExtraOptions] = useState([]);
-  const [extra, setExtra] = useState(null);
+  const [descoration, setDescoration] = useState(null);
 
   const changePrice = (e, index) => {
     const currentPrices = prices;
     currentPrices[index] = e.target.value;
     setPrices(currentPrices);
-  };
-
-  const handleExtraInput = (e) => {
-    setExtra({ ...extra, [e.target.name]: e.target.value });
-  };
-
-  const handleExtra = (e) => {
-    setExtraOptions((prev) => [...prev, extra]);
   };
 
   const handleCreate = async () => {
@@ -31,7 +22,7 @@ const Add = ({ setClose }) => {
     data.append("upload_preset", "uploads");
     try {
       const uploadRes = await axios.post(
-        "https://api.cloudinary.com/v1_1/dsbyq4sj1/image/upload",
+        "https://api.cloudinary.com/v1_1/ds2cg9121/image/upload",
         data
       );
 
@@ -40,7 +31,7 @@ const Add = ({ setClose }) => {
         title,
         desc,
         prices,
-        extraOptions,
+        descoration,
         img: url,
       };
 
@@ -57,7 +48,7 @@ const Add = ({ setClose }) => {
         <span onClick={() => setClose(true)} className={styles.close}>
           X
         </span>
-        <h1>Add a new Pizza</h1>
+        <h1>Add a new Product</h1>
         <div className={styles.item}>
           <label className={styles.label}>Choose an image</label>
           <input type="file" onChange={(e) => setFile(e.target.files[0])} />
@@ -76,6 +67,14 @@ const Add = ({ setClose }) => {
             rows={4}
             type="text"
             onChange={(e) => setDesc(e.target.value)}
+          />
+        </div>
+        <div className={styles.item}>
+          <label className={styles.label}>Decoration</label>
+          <textarea
+            rows={4}
+            type="text"
+            onChange={(e) => setDescoration(e.target.value)}
           />
         </div>
         <div className={styles.item}>
@@ -99,35 +98,6 @@ const Add = ({ setClose }) => {
               placeholder="Large"
               onChange={(e) => changePrice(e, 2)}
             />
-          </div>
-        </div>
-        <div className={styles.item}>
-          <label className={styles.label}>Extra</label>
-          <div className={styles.extra}>
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="text"
-              placeholder="Item"
-              name="text"
-              onChange={handleExtraInput}
-            />
-            <input
-              className={`${styles.input} ${styles.inputSm}`}
-              type="number"
-              placeholder="Price"
-              name="price"
-              onChange={handleExtraInput}
-            />
-            <button className={styles.extraButton} onClick={handleExtra}>
-              Add
-            </button>
-          </div>
-          <div className={styles.extraItems}>
-            {extraOptions.map((option) => (
-              <span key={option.text} className={styles.extraItem}>
-                {option.text}
-              </span>
-            ))}
           </div>
         </div>
         <button className={styles.addButton} onClick={handleCreate}>
